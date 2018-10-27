@@ -1,0 +1,15 @@
+{
+  "name": "jump",
+  "frames": [
+    {"string": "   o\n /||\\\n/ || \\\n  \\\\\n  //\n LL", "x": 0, "y": 5},
+    {"string": "   o\n  //===\n //\n ||\n ||\n LL", "x": 0, "y": 5},
+    {"string": "   //\n o//\n ||\n ||\n ||\n ||\n LL", "x": 0, "y": 6},
+    {"string": "   //\n o//\n ||\n ||\n ||\n ||\n LL", "x": 0, "y": 6},
+    {"string": "   //\n o//\n ||\n ||\n ||\n ||\n LL", "x": 0, "y": 7},
+    {"string": "   //\n o//\n ||\n ||\n ||\n ||\n LL", "x": 0, "y": 8},
+    {"string": "   //\n o//\n ||\n ||\n ||\n ||\n LL", "x": 0, "y": 7},
+    {"string": "   //\n o//\n ||\n ||\n ||\n ||\n LL", "x": 0, "y": 6},
+    {"string": "   o\n /||\\\n/ || \\\n  \\\\\n  //\n LL", "x": 0, "y": 5}
+  ],
+  "times": [1,1,1,1,1,2,3,2,1]
+}
