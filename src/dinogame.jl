@@ -14,9 +14,13 @@ function hideCursor()
 	# Hides cursor
     write(stdout, "\x1b[?25l")
 end
-function clear()
+function clear(t::REPL.Terminals.TTYTerminal)
 	# Clears the terminal
-    Base.run(`clear`)
+	if Sys.iswindows() && t.term_type==""
+		REPL.Terminals.clear(t)
+	else
+		Base.run(`clear`);
+	end
 end
 readNextChar(stream::IO=stdin) = Char(read(stream, UInt8)[1])
 function nextKey(t::REPL.Terminals.TTYTerminal)
@@ -147,7 +151,7 @@ function play(game::Game)
 			reset!(game.character.animationInterface.priorities)
 
 	# Clear screen and draw
-			clear()
+			clear(game.terminal)
         	draw(game)
 		end
 	end

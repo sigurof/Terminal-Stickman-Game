@@ -73,13 +73,14 @@ mutable struct Game
 	fps::Number
 	character::Character
 	world::World
-	function Game(fps::Number, idleAnimation::String, animationPaths::Array{String,1})
+	terminal::REPL.Terminals.TTYTerminal
+	function Game(fps::Number, idleAnimation::String, animationPaths::Array{String,1}, t::REPL.Terminals.TTYTerminal)
 		animations = loadAnimations(animationPaths)
 		priorities = Dict([(key,0) for key in keys(animations)])
 		ai = AnimationInterface(1, 1, 1, 1, 0, false, idleAnimation, idleAnimation, animations, priorities)
 		c = Character(5, 11, ai)
 		w = World(11)
 		#println(world.y)
-		new(true, fps, c, w)
+		new(true, fps, c, w, t)
 	end
 end
